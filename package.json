@@ -1,0 +1,25 @@
+{
+  "name": "authify",
+  "version": "1.0.0",
+  "description": "A reusable, standalone Node.js/Express monorepo providing end-to-end JWT authentication APIs and utilities, designed for easy integration into multiple projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solonkonora/Authify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/solonkonora/Authify/issues"
+  },
+  "homepage": "https://github.com/solonkonora/Authify#readme",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ]
+}
