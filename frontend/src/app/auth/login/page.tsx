@@ -4,7 +4,7 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Eye, EyeOff, Zap, AlertCircle } from "lucide-react";
+import { Eye, EyeOff, AlertCircle } from "lucide-react";
 import { login } from "../../../api/auth";
 import { useAuth } from "../../../hooks/use-auth";
 
@@ -45,22 +45,31 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen gradient-bg flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+    <div
+      className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
+      style={{
+        background: "linear-gradient(135deg, #e0e7ff 0%, #f0fdfa 100%)",
+      }}
+    >
+      <div
+        className="max-w-md w-full space-y-8 rounded-xl shadow-xl p-8"
+        style={{
+          background: "rgba(255,255,255,0.95)",
+          border: "1px solid #e0e7ef",
+          boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.10)",
+        }}
+      >
         {/* Header */}
-        <div className="text-center">
+        <div className="text-center mb-6">
           <Link href="/" className="inline-flex items-center space-x-2 mb-8">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <Zap className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-2xl font-bold text-gray-900">SprintSync</span>
+            <span className="text-3xl font-bold text-blue-700">Authify</span>
           </Link>
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">Welcome back</h2>
-          <p className="text-gray-600">Sign in to your account to continue</p>
+          <h2 className="text-2xl font-bold text-gray-800 mb-1">Welcome back</h2>
+          <p className="text-gray-500">Sign in to your account to continue</p>
         </div>
 
         {/* Form */}
-        <div className="card animate-slide-up">
+        <div>
           <form className="space-y-6" onSubmit={handleSubmit}>
             {error && (
               <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-center space-x-2 text-red-700">
@@ -79,7 +88,7 @@ const Login = () => {
                 type="email"
                 autoComplete="email"
                 required
-                className="input-field"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-200 bg-blue-50 text-gray-800 placeholder-gray-400 transition"
                 placeholder="Enter your email"
                 value={formData.email}
                 onChange={handleChange}
@@ -97,7 +106,7 @@ const Login = () => {
                   type={showPassword ? "text" : "password"}
                   autoComplete="current-password"
                   required
-                  className="input-field pr-12"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-200 bg-blue-50 text-gray-800 placeholder-gray-400 pr-12 transition"
                   placeholder="Enter your password"
                   value={formData.password}
                   onChange={handleChange}
@@ -143,7 +152,7 @@ const Login = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full btn-primary py-3 text-base font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+              className="w-full bg-blue-600 text-white py-3 rounded-lg text-base font-medium hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow"
             >
               {loading ? (
                 <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
