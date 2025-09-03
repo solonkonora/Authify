@@ -4,7 +4,9 @@
   "description": "A reusable, standalone Node.js/Express monorepo providing end-to-end JWT authentication APIs and utilities, designed for easy integration into multiple projects",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/app.ts",
+    "dev": "ts-node-dev src/app.ts"
   },
   "repository": {
     "type": "git",

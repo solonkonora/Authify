@@ -91,3 +91,5 @@ module.exports = router;
  *         description: Unauthorized
  */
 router.get("/me", authMiddleware, me);
+
+export default router;
